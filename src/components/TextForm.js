@@ -54,8 +54,12 @@ export default function TextForm(props) {
   };
 
   const calculateWords = () => {
-    let temp = text,count=0;
-    temp.split("\n").forEach((s)=>{count=count+s.split(" ").length});
+    let temp = text,
+      count = 0;
+    temp.split("\n").forEach((s) => {
+      let arr = s.split(" ").filter((t) => t.length > 0);
+      count = count + arr.length;
+    });
     return count;
   };
 

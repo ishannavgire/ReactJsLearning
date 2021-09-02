@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ColorPicker from "./ColorPicker";
 
 export default function NavBar(props) {
   //"navbar navbar-expand-lg navbar-light bg-light"
@@ -80,6 +81,9 @@ export default function NavBar(props) {
                   Enable Dark mode
                 </label>
               </div>
+            </li>
+            <li className="nav-item mx-3 my-2">
+              {props.mode === "dark" && <ColorPicker applyColor={props.applyColor}/>}
             </li>
           </ul>
           <form className="d-flex">
