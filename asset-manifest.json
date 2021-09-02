@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/ishannavgire/ReactJsLearning/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/ishannavgire/ReactJsLearning/static/js/main.99cb04de.chunk.js",
-    "main.js.map": "/ishannavgire/ReactJsLearning/static/js/main.99cb04de.chunk.js.map",
-    "runtime-main.js": "/ishannavgire/ReactJsLearning/static/js/runtime-main.855b2f92.js",
-    "runtime-main.js.map": "/ishannavgire/ReactJsLearning/static/js/runtime-main.855b2f92.js.map",
-    "static/js/2.a1733677.chunk.js": "/ishannavgire/ReactJsLearning/static/js/2.a1733677.chunk.js",
-    "static/js/2.a1733677.chunk.js.map": "/ishannavgire/ReactJsLearning/static/js/2.a1733677.chunk.js.map",
-    "static/js/3.b64cda34.chunk.js": "/ishannavgire/ReactJsLearning/static/js/3.b64cda34.chunk.js",
-    "static/js/3.b64cda34.chunk.js.map": "/ishannavgire/ReactJsLearning/static/js/3.b64cda34.chunk.js.map",
-    "index.html": "/ishannavgire/ReactJsLearning/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/ishannavgire/ReactJsLearning/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.a1733677.chunk.js.LICENSE.txt": "/ishannavgire/ReactJsLearning/static/js/2.a1733677.chunk.js.LICENSE.txt",
-    "static/media/mr-bean.067bc792.gif": "/ishannavgire/ReactJsLearning/static/media/mr-bean.067bc792.gif"
+    "main.css": "/ReactJsLearning/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/ReactJsLearning/static/js/main.99cb04de.chunk.js",
+    "main.js.map": "/ReactJsLearning/static/js/main.99cb04de.chunk.js.map",
+    "runtime-main.js": "/ReactJsLearning/static/js/runtime-main.c05da964.js",
+    "runtime-main.js.map": "/ReactJsLearning/static/js/runtime-main.c05da964.js.map",
+    "static/js/2.a1733677.chunk.js": "/ReactJsLearning/static/js/2.a1733677.chunk.js",
+    "static/js/2.a1733677.chunk.js.map": "/ReactJsLearning/static/js/2.a1733677.chunk.js.map",
+    "static/js/3.b64cda34.chunk.js": "/ReactJsLearning/static/js/3.b64cda34.chunk.js",
+    "static/js/3.b64cda34.chunk.js.map": "/ReactJsLearning/static/js/3.b64cda34.chunk.js.map",
+    "index.html": "/ReactJsLearning/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/ReactJsLearning/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.a1733677.chunk.js.LICENSE.txt": "/ReactJsLearning/static/js/2.a1733677.chunk.js.LICENSE.txt",
+    "static/media/mr-bean.067bc792.gif": "/ReactJsLearning/static/media/mr-bean.067bc792.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.855b2f92.js",
+    "static/js/runtime-main.c05da964.js",
     "static/js/2.a1733677.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
     "static/js/main.99cb04de.chunk.js"
