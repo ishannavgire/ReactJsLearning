@@ -17,10 +17,12 @@ function App() {
       document.body.style.backgroundColor = "grey";
       setMode("dark");
       showAlert("Dark mode enabled", "success");
+      // document.title="TextUtils - Dark Mode";
     } else {
       document.body.style.backgroundColor = "white";
       setMode("light");
       showAlert("Light mode enabled", "success");
+      // document.title="TextUtils - Light Mode";
     }
   };
 
