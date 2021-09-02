@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ishannavgire/ReactJsLearning/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/ishannavgire/ReactJsLearning/static/js/main.ef92929d.chunk.js",
+    "main.js.map": "/ishannavgire/ReactJsLearning/static/js/main.ef92929d.chunk.js.map",
+    "runtime-main.js": "/ishannavgire/ReactJsLearning/static/js/runtime-main.aefb99b5.js",
+    "runtime-main.js.map": "/ishannavgire/ReactJsLearning/static/js/runtime-main.aefb99b5.js.map",
+    "static/js/2.f5c44f92.chunk.js": "/ishannavgire/ReactJsLearning/static/js/2.f5c44f92.chunk.js",
+    "static/js/2.f5c44f92.chunk.js.map": "/ishannavgire/ReactJsLearning/static/js/2.f5c44f92.chunk.js.map",
+    "static/js/3.b90c8d85.chunk.js": "/ishannavgire/ReactJsLearning/static/js/3.b90c8d85.chunk.js",
+    "static/js/3.b90c8d85.chunk.js.map": "/ishannavgire/ReactJsLearning/static/js/3.b90c8d85.chunk.js.map",
+    "index.html": "/ishannavgire/ReactJsLearning/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/ishannavgire/ReactJsLearning/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.f5c44f92.chunk.js.LICENSE.txt": "/ishannavgire/ReactJsLearning/static/js/2.f5c44f92.chunk.js.LICENSE.txt",
+    "static/media/mr-bean.067bc792.gif": "/ishannavgire/ReactJsLearning/static/media/mr-bean.067bc792.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aefb99b5.js",
+    "static/js/2.f5c44f92.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.ef92929d.chunk.js"
+  ]
+}
