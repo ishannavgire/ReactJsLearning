@@ -6,6 +6,8 @@ import mrBean from "./mr-bean.gif";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
 import ColorPicker from "./components/ColorPicker";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import About from "./components/About";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -42,14 +44,26 @@ function App() {
     //can return only one tag
     // if multiple tags then use JSX fragment  => <> </>
     <>
-      <NavBar title="TextUtils" homeText="Home1" mode={mode} setMode={handleStyle} applyColor={applyColor} />
-      <Alert alert={alert} />
-      <div className="container">
-        <TextForm heading="Enter text to evaluate" mode={mode} showAlert={showAlert} color={color}/>
-      </div>
-      <div className="container-sm">
-        <img className="img-thumbnail" src={mrBean} alt="loading..." width="20%"></img>
-      </div>
+      <Router>
+        <NavBar title="TextUtils" homeText="Home" mode={mode} setMode={handleStyle} applyColor={applyColor} />
+        <Alert alert={alert} />
+
+        <Switch>
+          <Route exact path="/about">
+            <div className="container">
+              <About />
+            </div>
+          </Route>
+          <Route exact path="/">
+            <div className="container">
+              <TextForm heading="Enter text to evaluate" mode={mode} showAlert={showAlert} color={color} />
+            </div>
+          </Route>
+        </Switch>
+        <div className="container-sm">
+          <img className="img-thumbnail" src={mrBean} alt="loading..." width="20%"></img>
+        </div>
+      </Router>
     </>
   );
 }
