@@ -8,8 +8,37 @@ export default function TextForm(props) {
   const [selectedFile, setselectedFile] = useState(null);
 
   let fileReader;
-  // this is not allowed
-  //text="new value"
+
+  let myStyle = {
+    color: props.mode === "light" ? "black" : "white",
+    backgroundColor: props.color,
+  };
+
+  switch (props.color) {
+    case "#003366":
+      myStyle = {
+        color: "#b3d9ff",
+        backgroundColor: props.color,
+      };
+      break;
+    case "#3d1010":
+      myStyle = {
+        color: "#efc2c2",
+        backgroundColor: props.color,
+      };
+      break;
+    case "#1a3300":
+      myStyle = {
+        color: "#d9ffb3",
+        backgroundColor: props.color,
+      };
+      break;
+    default:
+      myStyle = {
+        color: props.mode === "light" ? "black" : "white",
+        backgroundColor: props.color,
+      };
+  }
 
   const handleUpClick = () => {
     console.log("Clicked on handleUpClick");
@@ -70,40 +99,42 @@ export default function TextForm(props) {
 
   return (
     <div>
-      <h1 className={`text-${props.mode === "light" ? "black" : "white"}`}> {props.heading} </h1>
-      <div className="mb-3">
+      {/* <h1 className={`text-${props.mode === "light" ? "black" : "white"}`}> {props.heading} </h1> */}
+      <h2 style={myStyle}> {props.heading} </h2>
+      <div className="my-3">
         <textarea value={text} className="form-control" id="textbox" rows="8" onChange={handleOnChange}></textarea>
       </div>
-      <div className="btn-group">
-        <button className="btn btn-primary mx-2" type="button" onClick={handleUpClick}>
+      <div className="btn-group my-3">
+        <button className="btn btn-primary mx-2" type="button" disabled={text.length===0} onClick={handleUpClick}>
           Convert to uppercase
         </button>
-        <button className="btn btn-primary mx-2" type="button" onClick={handleLoClick}>
+        <button className="btn btn-primary mx-2" type="button" disabled={text.length===0} onClick={handleLoClick}>
           Convert to lowercase
         </button>
-        <button className="btn btn-primary mx-2" type="button" onClick={handleClearText}>
+        <button className="btn btn-primary mx-2" type="button" disabled={text.length===0} onClick={handleClearText}>
           Clear Text
         </button>
-        <button className="btn btn-primary mx-2" type="button" onClick={handleCopyText}>
+        <button className="btn btn-primary mx-2" type="button" disabled={text.length===0} onClick={handleCopyText}>
           Copy
         </button>
       </div>
-      <div className="input-group mb-3 my-3 mx-2">
+      <div className="input-group my-3 mx-2">
         <input type="file" className="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" onChange={handleOnFileChange} />
         <button className="btn btn-outline-secondary" type="button" id="button-addon1" onClick={handleUploadFile}>
           Upload
         </button>
       </div>
-      <div className={`my-3 mx-2 text-${props.mode === "light" ? "black" : "white"}`}>
+      {/* <div className={`my-3 mx-2 text-${props.mode === "light" ? "black" : "white"}`}> */}
+      <div style={myStyle}>
         <h1> Your text summary </h1>
         <p>
           {calculateWords()}- words and {text.length}- characters
         </p>
         <p>
-          Approx {text.split(" ").length * 0.008}
+          Approx {calculateWords() * 0.008}
           minutes to read
         </p>
-        <h2> Preview </h2> <p> {text} </p>
+        <h2 style={myStyle}> Preview </h2> <p> {text} </p>
       </div>
     </div>
   );
