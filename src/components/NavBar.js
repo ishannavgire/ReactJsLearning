@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 export default function NavBar(props) {
   //"navbar navbar-expand-lg navbar-light bg-light"
-  const darkModeText = "Enable Dark mode";
-  const lightModeText = "Enable Light mode";
-  const darkModeSyle = "navbar navbar-expand-lg navbar-dark bg-dark";
-  const lightModeSyle = "navbar navbar-expand-lg navbar-light bg-light";
+  // const darkModeText = "Enable Dark mode";
+  // const lightModeText = "Enable Light mode";
+  // const darkModeSyle = "navbar navbar-expand-lg navbar-dark bg-dark";
+  // const lightModeSyle = "navbar navbar-expand-lg navbar-light bg-light";
 
   //Declare & define state variable
-  const [style, setStyle] = useState(lightModeSyle);
-  const [text, setText] = useState(darkModeText);
+  // const [style, setStyle] = useState(lightModeSyle);
+  // const [text, setText] = useState(darkModeText);
 
-  const handleStyle = () => {
-    if (text === darkModeText) {
-      setText(lightModeText);
-      setStyle(darkModeSyle);
-    } else if (text === lightModeText) {
-      setText(darkModeText);
-      setStyle(lightModeSyle);
-    }
-  };
+  // const handleStyle = () => {
+  //   if (text === darkModeText) {
+  //     setText(lightModeText);
+  //     setStyle(darkModeSyle);
+  //   } else if (text === lightModeText) {
+  //     setText(darkModeText);
+  //     setStyle(lightModeSyle);
+  //   }
+  // };
 
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
@@ -74,9 +74,9 @@ export default function NavBar(props) {
               </a>
             </li>
             <li className="nav-item mx-3 my-2">
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.setMode} />
-                <label className={`form-check-label text-${props.mode === "light" ? "black" : "white"}`} for="flexSwitchCheckDefault">
+              <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.setMode} />
+                <label className={`form-check-label text-${props.mode === "light" ? "black" : "white"}`} htmlFor="flexSwitchCheckDefault">
                   Enable Dark mode
                 </label>
               </div>
