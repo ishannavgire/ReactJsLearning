@@ -4,8 +4,8 @@ import React, { useState } from "react";
 export default function TextForm(props) {
   //Declare & define state variable
   const [text, setText] = useState("");
-  const [clipboard, setClipboard] = useState("");
   const [selectedFile, setselectedFile] = useState(null);
+  const [textCopied, setTextCopied] = useState(false);
 
   let fileReader;
 
@@ -41,29 +41,48 @@ export default function TextForm(props) {
   }
 
   const handleUpClick = () => {
-    console.log("Clicked on handleUpClick");
     let newText = text.toUpperCase();
     setText(newText);
     props.showAlert("Text converted to Uppercase", "success");
   };
 
   const handleLoClick = () => {
-    console.log("Clicked on handleLoClick");
     let newText = text.toLowerCase();
     setText(newText);
     props.showAlert("Text converted to Lowercase", "success");
   };
 
   const handleClearText = () => {
-    console.log("Clicked on handleClearText");
     setText("");
     props.showAlert("Text cleared", "success");
   };
 
   const handleCopyText = () => {
-    console.log("Clicked on handleCopyText" + text);
-    setClipboard(text);
-    props.showAlert("Text copied to clipboard", "success");
+    let currentText = text;
+    navigator.clipboard.writeText(currentText).then(() => {
+      setTextCopied(true);
+      prepareTextToDownload();
+      props.showAlert("Text copied to clipboard", "success");
+    });
+  };
+
+  const prepareTextToDownload = () => {
+    navigator.clipboard.readText().then((txt) => {
+      let file = new Blob([txt], { type: "text/plain" });
+      let element = document.querySelector("#saveBtn > a");
+      if (!element) {
+        element = document.createElement("a");
+      }
+      element.href = URL.createObjectURL(file);
+      element.download = "myFile.txt";
+      document.getElementById("saveBtn").appendChild(element);
+    });
+  };
+
+  const handleSaveText = () => {
+    let downloadLink = document.querySelector("#saveBtn > a");
+    downloadLink.click();
+    props.showAlert("Downloaded text from clipboard", "success");
   };
 
   const handleOnFileChange = (event) => {
@@ -93,7 +112,6 @@ export default function TextForm(props) {
   };
 
   const handleOnChange = (event) => {
-    console.log("Clicked on handleOnChange");
     setText(event.target.value);
   };
 
@@ -105,17 +123,20 @@ export default function TextForm(props) {
         <textarea value={text} className="form-control" id="textbox" rows="8" onChange={handleOnChange}></textarea>
       </div>
       <div className="btn-group my-3">
-        <button className="btn btn-primary mx-2" type="button" disabled={text.length===0} onClick={handleUpClick}>
+        <button className="btn btn-primary mx-2" type="button" disabled={text.length === 0} onClick={handleUpClick}>
           Convert to uppercase
         </button>
-        <button className="btn btn-primary mx-2" type="button" disabled={text.length===0} onClick={handleLoClick}>
+        <button className="btn btn-primary mx-2" type="button" disabled={text.length === 0} onClick={handleLoClick}>
           Convert to lowercase
         </button>
-        <button className="btn btn-primary mx-2" type="button" disabled={text.length===0} onClick={handleClearText}>
+        <button className="btn btn-primary mx-2" type="button" disabled={text.length === 0} onClick={handleClearText}>
           Clear Text
         </button>
-        <button className="btn btn-primary mx-2" type="button" disabled={text.length===0} onClick={handleCopyText}>
+        <button className="btn btn-primary mx-2" type="button" disabled={text.length === 0} onClick={handleCopyText}>
           Copy
+        </button>
+        <button id="saveBtn" className="btn btn-primary mx-2" type="button" disabled={!textCopied} onClick={handleSaveText}>
+          Save
         </button>
       </div>
       <div className="input-group my-3 mx-2">

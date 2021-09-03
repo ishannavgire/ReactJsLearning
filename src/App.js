@@ -30,7 +30,6 @@ function App() {
   };
 
   const applyColor = (colorName) => {
-    console.log(colorName);
     setColor(colorName);
   };
 

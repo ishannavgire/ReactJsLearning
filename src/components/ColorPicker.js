@@ -8,7 +8,7 @@ export default function ColorPicker(props) {
 
   return (
     <div>
-      <div className="btn-group hidden" role="group" aria-label="Basic radio toggle button group">
+      <div className="btn-group hidden" role="group" aria-label="Basic radio toggle button group" style={{cursor: 'pointer'}}>
         <input type="color" name="btnradio" id="btnradio1" value={`#003366`} onChange={paintColor} onClick={paintColor} />
         <input type="color" name="btnradio" id="btnradio1" value={`#3d1010`} onChange={paintColor} onClick={paintColor} />
         <input type="color" name="btnradio" id="btnradio1" value={`#1a3300`} onChange={paintColor} onClick={paintColor} />

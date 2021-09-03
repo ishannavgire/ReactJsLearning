@@ -150,7 +150,7 @@ export default function NavBar(props) {
       </div>
     </nav>
 
-    //Changes to host app on Github
+    //Changes to host app on Github (<Link/> to <a/>, 'to' attribute to 'href', use '#' in href as target )
     // <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
     //   <div className="container-fluid">
     //     <a className="navbar-brand" href="#">
